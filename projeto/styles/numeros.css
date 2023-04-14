@@ -1,0 +1,28 @@
+.especies-container {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.animal-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.animal-container span {
+  font-weight: bold;
+  font-family: monospace;
+  padding: 5px;
+}
+
+.sp-animal {
+  font-size: 1.8rem;
+}
+
+.sp-numero {
+  font-size: 1.4rem;
+  color: #E54;
+}

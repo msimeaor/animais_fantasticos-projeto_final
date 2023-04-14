@@ -1,0 +1,74 @@
+[data-menu="button"] {
+  display: none;
+}
+
+@media (max-width: 615px) {
+  [data-menu="button"] {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 300;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: #000;
+    padding: 8px 7.5px 7.5px 7.5px;
+    margin: 15px;
+    height: auto;
+    background: transparent;
+    border: 2px solid #000;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .5s;
+  }
+
+  [data-menu="button"]::before {
+    content: '';
+    display: inline-block;
+    height: 2.5px;
+    width: 12px;
+    background: #000;
+    margin-right: 5px;
+    box-shadow: 0 5px #000, 0 -5px #000;
+  }
+
+  .menu-lista {
+    display: none !important;
+    position: absolute;
+    top: 0;
+    padding: 60px 0px 0px 0px;
+    background: #FB5;
+    max-width: 160px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 2px 2px 10px #3838382c;
+    z-index: 200;
+  }
+
+  .menu-lista.ativo {
+    display: flex !important;
+    animation: show-right .5s forwards;
+  }
+
+  .menu-lista li {
+    padding: 5px 0px;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 160px;
+  }
+
+  .menu-lista:last-child {
+    padding-bottom: 10px;
+  }
+
+  .dropdown-menu {
+    position: relative;
+    border: none;
+    width: 160px;
+    left: 0%;
+    top: 0%;
+  }
+
+  .dropdown-menu li {
+    padding: 0px;
+  }
+
+}
