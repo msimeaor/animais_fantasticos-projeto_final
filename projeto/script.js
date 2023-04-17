@@ -1,4 +1,4 @@
-import initAnimais from "./modulos/init-animais.js"
+import NavAnimais from "./modulos/navAnimais.js"
 import Faq from "./modulos/faq.js"
 import initScroll from "./modulos/init-scroll.js"
 import {initModal, fecharModal} from "./modulos/modal.js"
@@ -10,8 +10,8 @@ import initFetchAnimais from "./modulos/init-fetch-animais.js"
 import fetchBictoin from "./modulos/fetch-bitcoin.js"
 
 const faq = new Faq('[data-acc="accordion"] dt')
+const navAnimais = new NavAnimais('[data-tab="menu"] li', '[data-tab="content"] section')
 
-initAnimais()
 initScroll()
 initModal()
 fecharModal()
