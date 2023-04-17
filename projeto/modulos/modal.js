@@ -1,37 +1,37 @@
-export function initModal() {
-  const modalContainer = document.querySelector('[data-modal="container"]')
-  const botaoLogin = document.querySelector('[data-menu="login"]')
+export default class Modal {
+  constructor(containerModal, botaoLoginMenu, botaoFecharModal) {
+    this.containerModal = document.querySelector(containerModal)
+    this.botaoLoginMenu = document.querySelector(botaoLoginMenu)
+    this.botaoFecharModal = document.querySelector(botaoFecharModal)
 
-  esconderModal()
+    this.toggleModal = this.toggleModal.bind(this)
+    this.cliqueForaModal = this.cliqueForaModal.bind(this)
 
-  function esconderModal() {
-    modalContainer.style.display = "none"
+    this.initModal()
   }
 
-  adcEventClickAoBotaoLogin()
-
-  function adcEventClickAoBotaoLogin() {
-    botaoLogin.addEventListener('click', mostrarModal)
+  adicionarEventos() {
+    this.botaoLoginMenu.addEventListener('click', this.toggleModal)
+    this.botaoFecharModal.addEventListener('click', this.toggleModal)
+    this.containerModal.addEventListener('click', this.cliqueForaModal)
   }
 
-  function mostrarModal(event) {
-    modalContainer.style.display = "flex"
-  }
-}
-
-export function fecharModal() {
-  const modalContainer = document.querySelector('[data-modal="container"]')
-  const botaoFecharModal = document.querySelector('[data-modal="fechar"]')
-
-  adcEventClickAoBotaoFecharEModal()
-
-  function adcEventClickAoBotaoFecharEModal() {
-    botaoFecharModal.addEventListener('click', sairModal)
-    modalContainer.addEventListener('click', sairModal)
+  toggleModal(event) {
+    event.preventDefault()
+    this.containerModal.classList.toggle('ativo')
   }
 
-  function sairModal(event) {
-    if(event.target === this)
-      modalContainer.style.display = "none"
+  cliqueForaModal(event) {
+    if (event.target === this.containerModal) {
+      this.toggleModal(event)
+    }
   }
+
+  initModal() {
+    if(this.containerModal && this.botaoLoginMenu && this.botaoFecharModal)
+      this.adicionarEventos()
+    else
+      console.log('Não foi possivel carregar o modal');
+  }
+
 }
