@@ -1,35 +1,48 @@
-export default function initTooltip() {
-  const mapa = document.querySelector('[data-tooltip]')
+export default class Tooltip {
+  constructor(mapaTooltip) {
+    this.mapaTooltip = document.querySelector(mapaTooltip)
+    this.onMouseOver = this.onMouseOver.bind(this)
+    this.onMouseMove = this.onMouseMove.bind(this)
+    this.onMouseLeave = this.onMouseLeave.bind(this)
 
-  mapa.addEventListener('mouseover', onMouseOver)
-  function onMouseOver(event) {
-    const tooltipContainer = criarElemento(this)
-
-    onMouseLeave.tooltipContainer = tooltipContainer
-    this.addEventListener('mouseleave', onMouseLeave)
-
-    onMouseMove.tooltipContainer = tooltipContainer
-    this.addEventListener('mousemove', onMouseMove)
+    this.initTooltip()
   }
 
-  function criarElemento(elemento) {
+  adcEventoAoMapa() {
+    this.mapaTooltip.addEventListener('mouseover', this.onMouseOver)
+  }
+
+  onMouseOver(event) {
+    this.criarTooltip()
+    this.tooltip.style.top = event.pageY + 'px'
+    this.tooltip.style.left = event.pageX + 'px'
+
+    this.mapaTooltip.addEventListener('mousemove', this.onMouseMove)
+    this.mapaTooltip.addEventListener('mouseleave', this.onMouseLeave)
+  }
+
+  criarTooltip() {
     const tooltip = document.createElement('div')
     tooltip.classList.add('tooltip')
-    tooltip.innerText = elemento.getAttribute('aria-label')
+    tooltip.innerText = this.mapaTooltip.getAttribute('aria-label')
     document.body.appendChild(tooltip)
-    return tooltip
+    this.tooltip = tooltip
   }
 
-  const onMouseLeave = {
-    handleEvent() {
-      this.tooltipContainer.remove()
-    }
+  onMouseMove(event) {
+    this.tooltip.style.top = (event.pageY + 15) + 'px'
+    this.tooltip.style.left = (event.pageX + 10) + 'px'
   }
 
-  const onMouseMove = {
-    handleEvent(event) {
-      this.tooltipContainer.style.top = (event.pageY + 15) + 'px'
-      this.tooltipContainer.style.left = (event.pageX + 10) + 'px'
-    }
+  onMouseLeave() {
+    this.tooltip.remove()
   }
+
+  initTooltip() {
+    if (this.mapaTooltip)
+      this.adcEventoAoMapa()
+    else
+      console.log('Não foi possivel carregar tooltip.js');
+  }
+
 }
