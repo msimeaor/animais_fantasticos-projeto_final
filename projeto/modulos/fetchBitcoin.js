@@ -14,7 +14,6 @@ export default class FetchBitcoin {
     this.fetchAPI().then(bitcoinBRL => {
       const spanBitcoin = document.querySelector('.btc-preco')
       spanBitcoin.innerText = (100 / bitcoinBRL.buy).toFixed(7)
-      console.log(bitcoinBRL.buy);
     })
   }
 
