@@ -7,7 +7,7 @@ import initScroll from "./modulos/init-scroll.js"
 import initDropdown from "./modulos/dropdown-menu.js"
 import initMenu from "./modulos/menu-mobile.js"
 import initFuncionamento from "./modulos/funcionamento.js"
-import fetchBictoin from "./modulos/fetch-bitcoin.js"
+import FetchBitcoin from "./modulos/fetchBitcoin.js"
 
 const faq = new Faq('[data-acc="accordion"] dt')
 
@@ -19,8 +19,9 @@ const tooltip = new Tooltip('[data-tooltip]')
 
 const fetchAnimais = new FetchAnimais('./json/numeros-animaisapi.json', '.especies-container')
 
+const fetchBictoin = new FetchBitcoin('https://blockchain.info/ticker')
+
 initScroll()
 initDropdown()
 initMenu()
 initFuncionamento()
-fetchBictoin()
