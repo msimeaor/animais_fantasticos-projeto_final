@@ -3,7 +3,7 @@ import Faq from "./modulos/faq.js"
 import Modal from "./modulos/modal.js"
 import Tooltip from "./modulos/tooltip.js"
 import FetchAnimais from "./modulos/fetchAnimais.js"
-import initScroll from "./modulos/init-scroll.js"
+import Scroll from "./modulos/scroll.js"
 import initDropdown from "./modulos/dropdown-menu.js"
 import initMenu from "./modulos/menu-mobile.js"
 import initFuncionamento from "./modulos/funcionamento.js"
@@ -21,7 +21,8 @@ const fetchAnimais = new FetchAnimais('./json/numeros-animaisapi.json', '.especi
 
 const fetchBictoin = new FetchBitcoin('https://blockchain.info/ticker')
 
-initScroll()
+const scroll = new Scroll('[data-tab="scroll"]')
+
 initDropdown()
 initMenu()
 initFuncionamento()
