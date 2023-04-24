@@ -5,7 +5,7 @@ import Tooltip from "./modulos/tooltip.js"
 import FetchAnimais from "./modulos/fetchAnimais.js"
 import Scroll from "./modulos/scroll.js"
 import DropdownMenu from "./modulos/dropdownMenu.js"
-import initMenu from "./modulos/menu-mobile.js"
+import MenuMobile from "./modulos/menuMobile.js"
 import initFuncionamento from "./modulos/funcionamento.js"
 import FetchBitcoin from "./modulos/fetchBitcoin.js"
 
@@ -25,5 +25,6 @@ const scroll = new Scroll('[data-tab="scroll"]')
 
 const dropDownMenu = new DropdownMenu('[data-dropdown="drop-menu"] a', '[data-dropdown="ul-dropdown"]')
 
-initMenu()
+const menuMobile = new MenuMobile('[data-menu="button"]', '[data-menu="menu"]', 'body')
+
 initFuncionamento()
