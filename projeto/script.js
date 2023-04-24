@@ -4,7 +4,7 @@ import Modal from "./modulos/modal.js"
 import Tooltip from "./modulos/tooltip.js"
 import FetchAnimais from "./modulos/fetchAnimais.js"
 import Scroll from "./modulos/scroll.js"
-import initDropdown from "./modulos/dropdown-menu.js"
+import DropdownMenu from "./modulos/dropdownMenu.js"
 import initMenu from "./modulos/menu-mobile.js"
 import initFuncionamento from "./modulos/funcionamento.js"
 import FetchBitcoin from "./modulos/fetchBitcoin.js"
@@ -23,6 +23,7 @@ const fetchBictoin = new FetchBitcoin('https://blockchain.info/ticker')
 
 const scroll = new Scroll('[data-tab="scroll"]')
 
-initDropdown()
+const dropDownMenu = new DropdownMenu('[data-dropdown="drop-menu"] a', '[data-dropdown="ul-dropdown"]')
+
 initMenu()
 initFuncionamento()
