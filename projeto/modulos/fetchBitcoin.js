@@ -18,9 +18,10 @@ export default class FetchBitcoin {
   }
 
   initFetchBitcoin() {
-    if (this.dirAPIBitcoin)
+    if (this.dirAPIBitcoin) {
       this.alterarInnerTextDoSpan()
-    else
+      return this
+    } else
       console.log('Erro ao carregar fetchBitcoin.js');
   }
 

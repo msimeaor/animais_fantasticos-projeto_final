@@ -2,7 +2,7 @@ export default class AnimaNumeros {
   constructor(spanNumeros) {
     this.spanNumeros = document.querySelectorAll(spanNumeros)
     this.handleMutation = this.handleMutation.bind(this)
-    this.habilitarMutation()
+    this.initAnimaNumeros()
   }
 
   iniciarContagem() {
@@ -38,9 +38,10 @@ export default class AnimaNumeros {
   }
 
   initAnimaNumeros() {
-    if (this.spanNumeros.length)
+    if (this.spanNumeros.length) {
       this.habilitarMutation()
-    else
+      return this
+    } else
       console.log('Erro ao carregar AnimaNumeros.js');
   }
 

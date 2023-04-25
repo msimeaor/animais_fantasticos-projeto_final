@@ -39,9 +39,10 @@ export default class Tooltip {
   }
 
   initTooltip() {
-    if (this.mapaTooltip)
+    if (this.mapaTooltip) {
       this.adcEventoAoMapa()
-    else
+      return this
+    } else
       console.log('Não foi possivel carregar tooltip.js');
   }
 

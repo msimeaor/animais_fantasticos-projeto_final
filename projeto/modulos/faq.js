@@ -24,9 +24,10 @@ export default class Faq {
   }
 
   initFaq() {
-    if (this.listaPerguntas.length)
+    if (this.listaPerguntas.length) {
       this.adcEventoNasPerguntas()
-    else
+      return this
+    } else
       console.log('Erro ao carregar classe "Faq"!');
   }
 }

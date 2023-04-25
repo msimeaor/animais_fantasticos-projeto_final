@@ -27,6 +27,7 @@ export default class Funcionamento {
     if (this.funcionamento) {
       this.definirDiaUtilOuNao()
       this.definirStatusLoja()
+      return this
     } else {
       console.log('Erro ao carregar funcionamento.js');
     }
