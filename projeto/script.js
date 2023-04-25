@@ -6,8 +6,9 @@ import FetchAnimais from "./modulos/fetchAnimais.js"
 import Scroll from "./modulos/scroll.js"
 import DropdownMenu from "./modulos/dropdownMenu.js"
 import MenuMobile from "./modulos/menuMobile.js"
-import initFuncionamento from "./modulos/funcionamento.js"
 import FetchBitcoin from "./modulos/fetchBitcoin.js"
+import Funcionamento from "./modulos/funcionamento.js"
+
 
 const faq = new Faq('[data-acc="accordion"] dt')
 
@@ -27,4 +28,4 @@ const dropDownMenu = new DropdownMenu('[data-dropdown="drop-menu"] a', '[data-dr
 
 const menuMobile = new MenuMobile('[data-menu="button"]', '[data-menu="menu"]', 'body')
 
-initFuncionamento()
+const funcionamento = new Funcionamento('.funcionamento')
