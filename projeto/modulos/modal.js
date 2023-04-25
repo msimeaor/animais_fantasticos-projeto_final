@@ -28,9 +28,10 @@ export default class Modal {
   }
 
   initModal() {
-    if(this.containerModal && this.botaoLoginMenu && this.botaoFecharModal)
+    if(this.containerModal && this.botaoLoginMenu && this.botaoFecharModal) {
       this.adicionarEventos()
-    else
+      return this
+    } else
       console.log('Não foi possivel carregar o modal');
   }
 

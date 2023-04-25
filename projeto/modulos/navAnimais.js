@@ -2,6 +2,7 @@ export default class NavAnimais {
   constructor(listaImagensAnimais, listaSections) {
     this.listaImagensAnimais = document.querySelectorAll(listaImagensAnimais)
     this.listaSections = document.querySelectorAll(listaSections)
+
     this.initNavAnimais()
   }
 
@@ -27,6 +28,7 @@ export default class NavAnimais {
     if (this.listaImagensAnimais.length && this.listaSections.length) {
       this.listaSections[0].classList.add('show-right')
       this.adcEventoNasImagens()
+      return this
     } else
       console.log('Erro ao carregar "arquivo navAnimais.js"');
   }

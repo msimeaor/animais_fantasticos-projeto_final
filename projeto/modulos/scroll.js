@@ -24,6 +24,7 @@ export default class Scroll {
     if (this.sections.length) {
       this.sections[0].classList.add('ativo')
       this.adcEventoWindow()
+      return this
     } else {
       console.log('Erro ao carregar scroll.js');
     }

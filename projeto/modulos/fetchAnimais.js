@@ -5,7 +5,7 @@ export default class FetchAnimais {
     this.dirAPIAnimais = dirAPIAnimais
     this.containerAnimais = document.querySelector(containerAnimais)
     
-    this.iterarAnimais()
+    this.initFetchAnimais()
   }
 
   async fetchAPIAnimais() {
@@ -56,9 +56,10 @@ export default class FetchAnimais {
   }
 
   initFetchAnimais() {
-    if (this.dirAPIAnimais && this.containerAnimais)
+    if (this.dirAPIAnimais && this.containerAnimais) {
       this.iterarAnimais()
-    else
+      return this
+    } else
       console.log('Erro ao carregar fetchAnimais.js');
   }
 

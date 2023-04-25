@@ -7,27 +7,35 @@ export default class DropdownMenu {
     this.ativarDropdown = this.ativarDropdown.bind(this)
     this.desativarDropdown = this.desativarDropdown.bind(this)
 
-    this.adcEventoLiSobre()
+    this.initDropdownMenu()
   }
 
-adcEventoLiSobre() {
-  this.eventosMostraDrop.forEach(evento => {
-    this.liSobre.addEventListener(evento, this.ativarDropdown)
-  })
-}
+  adcEventoLiSobre() {
+    this.eventosMostraDrop.forEach(evento => {
+      this.liSobre.addEventListener(evento, this.ativarDropdown)
+    })
+  }
 
-ativarDropdown() {
-  this.ulDropdown.classList.add('ativo')
+  ativarDropdown() {
+    this.ulDropdown.classList.add('ativo')
 
-  this.ulDropdown.addEventListener('mouseleave', this.desativarDropdown)
-  this.liSobre.addEventListener('touchstart', this.desativarDropdown)
-}
+    this.ulDropdown.addEventListener('mouseleave', this.desativarDropdown)
+    this.liSobre.addEventListener('touchstart', this.desativarDropdown)
+  }
 
-desativarDropdown() {
-  this.ulDropdown.classList.remove('ativo')
+  desativarDropdown() {
+    this.ulDropdown.classList.remove('ativo')
 
-  this.ulDropdown.removeEventListener('mouseleave', this.desativarDropdown)
-  this.liSobre.removeEventListener('touchstart', this.desativarDropdown)
-}
+    this.ulDropdown.removeEventListener('mouseleave', this.desativarDropdown)
+    this.liSobre.removeEventListener('touchstart', this.desativarDropdown)
+  }
+
+  initDropdownMenu() {
+    if (this.liSobre && this.ulDropdown) {
+      this.adcEventoLiSobre()
+      return this
+    } else
+      console.log('Erro ao carregar dropdownMenu.js'); 
+  }
   
 }
